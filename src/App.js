@@ -176,6 +176,7 @@ const Calendar1 = ({ days, firstDayOfMonth }) => {
   }
 
   const calendar = createCalendar(days, firstDayOfMonth);
+  console.log("111");
 
   return (
     <div className="calendar-container max-w-sm mx-auto pt-10">
