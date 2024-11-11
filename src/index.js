@@ -6,6 +6,7 @@ import App from "./App";
 
 import Animation from "./Animation";
 import reportWebVitals from "./reportWebVitals";
+import test1 from "./test1";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
