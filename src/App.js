@@ -137,13 +137,15 @@ const Video = () => {
   };
 
   const refTitle = useRef(null);
+  const refTitle2 = useRef(null);
+
   const isInViewTitle = useInView(refTitle, {
     amount: "all",
   });
-  console.log("isInViewTitle - = ", isInViewTitle);
-  // useEffect(() => {
-  //   console.log(`The element ${isInViewTitle ? "is" : "is NOT"} in view`);
-  // }, [isInViewTitle]);
+  const isInViewTitle2 = useInView(refTitle2, {
+    amount: "all",
+  });
+
   return (
     <div className="bg-[#f6f1f3]">
       <motion.div
@@ -154,16 +156,33 @@ const Video = () => {
       >
         Video Cưới
       </motion.div>
-      <div className=" pb-6  flex justify-center items-center">
+      <motion.div
+        ref={refTitle2}
+        animate={{
+          y: isInViewTitle2 ? 0 : 50,
+          opacity: isInViewTitle2 ? 1 : 0,
+        }}
+        transition={{ type: "spring", delay: 0.2 }}
+        className=" pb-6  flex justify-center items-center"
+      >
         Tình yêu không làm cho thế giới quay tròn
-      </div>
-      <div className="flex justify-center items-center ">
+      </motion.div>
+
+      <motion.div
+        ref={refTitle2}
+        animate={{
+          scale: isInViewTitle2 ? 1 : 0.5,
+          opacity: isInViewTitle2 ? 1 : 0,
+        }}
+        transition={{ duration: 1, type: "spring", delay: 0.2 }}
+        className="flex justify-center items-center "
+      >
         <YouTube
           videoId="aXKi9vo51xQ"
           opts={videoOptions}
           className="  overflow-hidden rounded-lg"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
@@ -174,7 +193,7 @@ const Iamge = () => {
   return (
     <div className="bg-[#f6f1f3]">
       <div className=" h-28 pt-6 flex justify-center items-center">
-        Video Cưới
+        Album Hình Cưới
       </div>
       <div className=" pb-6  flex justify-center items-center px-6 text-center">
         Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó
