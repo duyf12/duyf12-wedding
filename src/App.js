@@ -18,11 +18,18 @@ import nhagai from "./images/nhagai.png";
 import nhatrai from "./images/nhatrai.jpeg";
 import { CircleDollarSign, MessageCircle, Image } from "lucide-react";
 import YouTube from "react-youtube";
-import FallingHearts from './FallingHearts';
+import FallingHearts from "./FallingHearts";
+import {
+  motion,
+  useInView,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 function App() {
   return (
     <div className="bg-[#f6f1f3]">
-      <HeartAnimation1 />
+      {/* <HeartAnimation1 /> */}
       <Home />
       <Button />
       <Video />
@@ -33,7 +40,6 @@ function App() {
       <Groom />
       <Event />
       <Message />
-
     </div>
   );
 }
@@ -69,22 +75,56 @@ const Home = () => {
 };
 
 const Button = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    amount: "all",
+  });
+
   return (
-    <div className="p-6">
-      <div className="h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md text-white">
+    <div className="p-6" ref={ref}>
+      <motion.div
+        animate={{ x: isInView ? 0 : 100, opacity: isInView ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2 }}
+        className="h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md text-white"
+      >
         <MessageCircle size={17} />
         <div className="ml-1">Gửi lời chúc</div>
-      </div>
-      <div className=" h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md mt-1 text-white">
+      </motion.div>
+      <motion.div
+        animate={{ x: isInView ? 0 : -100, opacity: isInView ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2 }}
+        className=" h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md mt-1 text-white"
+      >
         <MessageCircle size={17} />
         <div className="ml-1">Xác nhận tham dự</div>
-      </div>
-      <div className="h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md mt-1 text-white">
+      </motion.div>
+      <motion.div
+        animate={{ x: isInView ? 0 : 100, opacity: isInView ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2 }}
+        className="h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md mt-1 text-white"
+      >
         <CircleDollarSign size={17} />
         <div className="ml-1">Mừng cưới</div>
-      </div>
+      </motion.div>
     </div>
   );
+};
+
+const containerVieo = {
+  hiden: {
+    opacity: 0,
+    y: 100,
+    scale: 0,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      delay: 0.2,
+    },
+  },
 };
 
 const Video = () => {
@@ -95,11 +135,25 @@ const Video = () => {
       autoplay: 1,
     },
   };
+
+  const refTitle = useRef(null);
+  const isInViewTitle = useInView(refTitle, {
+    amount: "all",
+  });
+  console.log("isInViewTitle - = ", isInViewTitle);
+  // useEffect(() => {
+  //   console.log(`The element ${isInViewTitle ? "is" : "is NOT"} in view`);
+  // }, [isInViewTitle]);
   return (
     <div className="bg-[#f6f1f3]">
-      <div className=" h-24 pt-6 flex justify-center items-center">
+      <motion.div
+        ref={refTitle}
+        animate={{ y: isInViewTitle ? 0 : 50, opacity: isInViewTitle ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2 }}
+        className=" h-24 pt-6 flex justify-center items-center"
+      >
         Video Cưới
-      </div>
+      </motion.div>
       <div className=" pb-6  flex justify-center items-center">
         Tình yêu không làm cho thế giới quay tròn
       </div>
@@ -199,10 +253,11 @@ const Calendar1 = ({ days, firstDayOfMonth }) => {
         <div className="grid grid-cols-7 gap-1" key={index}>
           {week.map((day, idx) => (
             <div
-              className={`p-3 text-center    ${day == 24
-                ? "bg-[#c19f9d] rounded-full text-white "
-                : "text-[#bca0ac]"
-                }`}
+              className={`p-3 text-center    ${
+                day == 24
+                  ? "bg-[#c19f9d] rounded-full text-white "
+                  : "text-[#bca0ac]"
+              }`}
               key={idx}
             >
               {day || ""}
@@ -332,8 +387,8 @@ const Couple = () => {
       <img src={icon} className=" object-cover rounded-lg" />
       <img src={couple2} className="mt-4 object-cover rounded-lg" />
     </div>
-  )
-}
+  );
+};
 
 const Groom = () => {
   return (
@@ -351,19 +406,17 @@ const Groom = () => {
           Mai Duy
         </div>
         <div className="flex justify-center items-center text-[#847275]">
-          Con ông: <span className="text-[#5f5e62] font-bold ml-2">
-            Mai Văn Hoàng
-          </span>
+          Con ông:{" "}
+          <span className="text-[#5f5e62] font-bold ml-2">Mai Văn Hoàng</span>
         </div>
         <div className="flex justify-center items-center text-[#847275]">
-          Con bà: <span className="text-[#5f5e62] font-bold ml-2">
-            Mai Thị Xuân
-          </span>
+          Con bà:{" "}
+          <span className="text-[#5f5e62] font-bold ml-2">Mai Thị Xuân</span>
         </div>
         <div className="flex justify-center items-center px-4 text-center text-[#847275]">
-          Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở Hà nội...
+          Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở Hà
+          nội...
         </div>
-
       </div>
       <div className="mt-8">
         <img src={bride} className=" object-cover rounded-lg" />
@@ -373,21 +426,19 @@ const Groom = () => {
         Mai Thủy
       </div>
       <div className="flex justify-center items-center text-[#847275]">
-        Con ông: <span className="text-[#5f5e62] font-bold ml-2">
-          Mai Văn Thành
-        </span>
+        Con ông:{" "}
+        <span className="text-[#5f5e62] font-bold ml-2">Mai Văn Thành</span>
       </div>
       <div className="flex justify-center items-center text-[#847275]">
-        Con bà: <span className="text-[#5f5e62] font-bold ml-2">
-          Nguyễn Thị Thắm
-        </span>
+        Con bà:{" "}
+        <span className="text-[#5f5e62] font-bold ml-2">Nguyễn Thị Thắm</span>
       </div>
       <div className="flex justify-center items-center px-4 text-center text-[#847275]">
         Là dược sĩ hiện đang công tác tại một phòng khám nha khoa ở Hà nội...
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Event = () => {
   return (
@@ -396,7 +447,8 @@ const Event = () => {
         Sự kiện cưới
       </div>
       <div className="flex justify-center items-center  text-center px-4 text-[#555356]">
-        Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!
+        Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám
+        cưới của chúng tôi!
       </div>
       <div className="mt-6">
         <div>
@@ -437,34 +489,36 @@ const Event = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Message = () => {
-
   return (
     <div className="p-4 mt-4">
       <div className="flex justify-center items-center text-3xl text-center text-[#555356]">
         Sự kiện cưới
       </div>
       <div className="flex justify-center items-center  text-center px-4 text-[#555356] mt-2">
-        Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!
+        Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám
+        cưới của chúng tôi!
       </div>
 
       <div className="bg-[#ecd9d9] p-3 rounded-lg mt-4">
         <div className="flex justify-between">
           <input
             placeholder="Họ và tên"
-            className="w-[180px] px-2 py-2 border rounded text-[#555356] focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]" />
+            className="w-[180px] px-2 py-2 border rounded text-[#555356] focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]"
+          />
           <input
             placeholder="Email"
-            className="w-[180px] px-2 py-2 border rounded text-[#555356] focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]" />
-
+            className="w-[180px] px-2 py-2 border rounded text-[#555356] focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]"
+          />
         </div>
         <div>
           <textarea
             class="mt-3 w-full h-[150px] border  text-[#555356] rounded p-2  resize-none focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]"
-            placeholder="Nhập lời chúc của bạn"></textarea>
+            placeholder="Nhập lời chúc của bạn"
+          ></textarea>
         </div>
         <div className="flex justify-center items-center">
           <div className="  bg-[#c9b5b6] mt-3 px-4 py-2 rounded inline-block text-white ">
@@ -475,27 +529,20 @@ const Message = () => {
 
       <div className="bg-[#ecd9d9] p-3 rounded-lg mt-4">
         <div className=" px-2 py-2 bg-white rounded ">
-          <div className="text-[#555356]">
-            Duy KAka
-          </div>
+          <div className="text-[#555356]">Duy KAka</div>
           <div className="text-[#555356] mt-2">
             Chúc anh chị trăm năm hạnh phúc
           </div>
         </div>
         <div className=" px-2 py-2 bg-white rounded mt-2">
-          <div className="text-[#555356]">
-            Duy KAka
-          </div>
+          <div className="text-[#555356]">Duy KAka</div>
           <div className="text-[#555356] mt-2">
             Chúc anh chị trăm năm hạnh phúc
           </div>
         </div>
-        <div className=" h-10 px-2 py-2 ">
-
-        </div>
+        <div className=" h-10 px-2 py-2 "></div>
       </div>
       <div className="mt-20 mb-10">
-
         <div className=" text-[#555356] flex justify-center items-center text-3xl">
           Thank you!
         </div>
@@ -503,10 +550,9 @@ const Message = () => {
           -- Mai Duy & Mai Thủy --
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
 const titleTab = [
   "Cặp đôi",
@@ -556,7 +602,6 @@ const FallingHeart = () => {
   );
 };
 
-
 const HeartAnimation = () => {
   const hearts = Array.from({ length: 10 }); // 20 trái tim
 
@@ -568,7 +613,6 @@ const HeartAnimation = () => {
     </div>
   );
 };
-
 
 const HeartAnimation1 = () => {
   const [hearts, setHearts] = useState([]);
@@ -584,8 +628,6 @@ const HeartAnimation1 = () => {
     }, 5000); // Thêm trái tim mỗi giây
     return () => clearInterval(interval); // Dọn dẹp interval khi component bị hủy
   }, []);
-
-
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none">
@@ -604,6 +646,5 @@ const HeartAnimation1 = () => {
     </div>
   );
 };
-
 
 export default App;
