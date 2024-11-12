@@ -9,18 +9,31 @@ import cuoi5 from "./images/cuoi5.jpg";
 import cuoi6 from "./images/cuoi6.jpg";
 
 import couple from "./images/sub_title.png";
+import couple2 from "./images/couple.png";
+import icon from "./images/icon.png";
+
+import bride from "./images/bride.png";
+import groom from "./images/groom.jpg";
+import nhagai from "./images/nhagai.png";
+import nhatrai from "./images/nhatrai.jpeg";
 import { CircleDollarSign, MessageCircle, Image } from "lucide-react";
 import YouTube from "react-youtube";
-
+import FallingHearts from './FallingHearts';
 function App() {
   return (
     <div className="bg-[#f6f1f3]">
+      <HeartAnimation1 />
       <Home />
       <Button />
       <Video />
       <Iamge />
       <Calendar />
       <ThankYou />
+      <Couple />
+      <Groom />
+      <Event />
+      <Message />
+
     </div>
   );
 }
@@ -186,11 +199,10 @@ const Calendar1 = ({ days, firstDayOfMonth }) => {
         <div className="grid grid-cols-7 gap-1" key={index}>
           {week.map((day, idx) => (
             <div
-              className={`p-3 text-center    ${
-                day == 24
-                  ? "bg-[#c19f9d] rounded-full text-white "
-                  : "text-[#bca0ac]"
-              }`}
+              className={`p-3 text-center    ${day == 24
+                ? "bg-[#c19f9d] rounded-full text-white "
+                : "text-[#bca0ac]"
+                }`}
               key={idx}
             >
               {day || ""}
@@ -313,6 +325,189 @@ const ThankYou = () => {
     </div>
   );
 };
+
+const Couple = () => {
+  return (
+    <div className="p-4 mt-8">
+      <img src={icon} className=" object-cover rounded-lg" />
+      <img src={couple2} className="mt-4 object-cover rounded-lg" />
+    </div>
+  )
+}
+
+const Groom = () => {
+  return (
+    <div className="p-4 mt-8">
+      <div className=" flex justify-center items-center text-3xl">
+        Cô Dâu & Chú Rể
+      </div>
+      <div className="flex justify-center items-center  mt-4">
+        Giới thiệu một chú rể đẹp trai và cô dâu xinh đẹp
+      </div>
+      <div className="mt-8">
+        <img src={groom} className=" object-cover rounded-lg" />
+
+        <div className="flex justify-center items-center mt-2 text-[#5f5e62] font-bold">
+          Mai Duy
+        </div>
+        <div className="flex justify-center items-center text-[#847275]">
+          Con ông: <span className="text-[#5f5e62] font-bold ml-2">
+            Mai Văn Hoàng
+          </span>
+        </div>
+        <div className="flex justify-center items-center text-[#847275]">
+          Con bà: <span className="text-[#5f5e62] font-bold ml-2">
+            Mai Thị Xuân
+          </span>
+        </div>
+        <div className="flex justify-center items-center px-4 text-center text-[#847275]">
+          Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở Hà nội...
+        </div>
+
+      </div>
+      <div className="mt-8">
+        <img src={bride} className=" object-cover rounded-lg" />
+      </div>
+
+      <div className="flex justify-center items-center mt-2 text-[#5f5e62] font-bold">
+        Mai Thủy
+      </div>
+      <div className="flex justify-center items-center text-[#847275]">
+        Con ông: <span className="text-[#5f5e62] font-bold ml-2">
+          Mai Văn Thành
+        </span>
+      </div>
+      <div className="flex justify-center items-center text-[#847275]">
+        Con bà: <span className="text-[#5f5e62] font-bold ml-2">
+          Nguyễn Thị Thắm
+        </span>
+      </div>
+      <div className="flex justify-center items-center px-4 text-center text-[#847275]">
+        Là dược sĩ hiện đang công tác tại một phòng khám nha khoa ở Hà nội...
+      </div>
+    </div>
+  )
+}
+
+const Event = () => {
+  return (
+    <div className="p-4 mt-4">
+      <div className="flex justify-center items-center text-3xl text-center text-[#555356]">
+        Sự kiện cưới
+      </div>
+      <div className="flex justify-center items-center  text-center px-4 text-[#555356]">
+        Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!
+      </div>
+      <div className="mt-6">
+        <div>
+          <img src={nhagai} className=" object-cover rounded-t-lg" />
+        </div>
+        <div className="bg-[#ecd9d9] p-3 rounded-b-lg">
+          <div className="text-[#555356]">
+            <span className="font-medium">LỄ VU QUY</span> - 13h30 24/11/2024
+          </div>
+          <div className="text-[#555356]">
+            Tiệc cưới nhà gái - 11h 24/11/2024
+          </div>
+          <div className="text-[#555356]">
+            Tư gia nhà gái - Xóm 16 Hải Nam, Hải Hậu, Nam Định
+          </div>
+          <div className=" mt-2 bg-[#c9b5b6]  px-2 py-1 rounded inline-block text-white ">
+            Xem bản đồ
+          </div>
+        </div>
+      </div>
+      <div className="mt-6">
+        <div>
+          <img src={nhatrai} className=" object-cover rounded-t-lg" />
+        </div>
+        <div className="bg-[#ecd9d9] p-3 rounded-b-lg">
+          <div className="text-[#555356]">
+            <span className="font-medium">LỄ THÀNH HÔN</span> - 14h05 24/11/2024
+          </div>
+          <div className="text-[#555356]">
+            Tiệc cưới nhà trai - 11h 24/11/2024
+          </div>
+          <div className="text-[#555356]">
+            Tư gia nhà gái - Xóm 15 Hải Nam, Hải Hậu, Nam Định
+          </div>
+          <div className=" mt-2 bg-[#c9b5b6]  px-2 py-1 rounded inline-block text-white ">
+            Xem bản đồ
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const Message = () => {
+
+  return (
+    <div className="p-4 mt-4">
+      <div className="flex justify-center items-center text-3xl text-center text-[#555356]">
+        Sự kiện cưới
+      </div>
+      <div className="flex justify-center items-center  text-center px-4 text-[#555356] mt-2">
+        Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!
+      </div>
+
+      <div className="bg-[#ecd9d9] p-3 rounded-lg mt-4">
+        <div className="flex justify-between">
+          <input
+            placeholder="Họ và tên"
+            className="w-[180px] px-2 py-2 border rounded text-[#555356] focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]" />
+          <input
+            placeholder="Email"
+            className="w-[180px] px-2 py-2 border rounded text-[#555356] focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]" />
+
+        </div>
+        <div>
+          <textarea
+            class="mt-3 w-full h-[150px] border  text-[#555356] rounded p-2  resize-none focus:outline-none focus:ring-4 focus:ring-[#b4bfe2]"
+            placeholder="Nhập lời chúc của bạn"></textarea>
+        </div>
+        <div className="flex justify-center items-center">
+          <div className="  bg-[#c9b5b6] mt-3 px-4 py-2 rounded inline-block text-white ">
+            GỬI LỜI CHÚC
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#ecd9d9] p-3 rounded-lg mt-4">
+        <div className=" px-2 py-2 bg-white rounded ">
+          <div className="text-[#555356]">
+            Duy KAka
+          </div>
+          <div className="text-[#555356] mt-2">
+            Chúc anh chị trăm năm hạnh phúc
+          </div>
+        </div>
+        <div className=" px-2 py-2 bg-white rounded mt-2">
+          <div className="text-[#555356]">
+            Duy KAka
+          </div>
+          <div className="text-[#555356] mt-2">
+            Chúc anh chị trăm năm hạnh phúc
+          </div>
+        </div>
+        <div className=" h-10 px-2 py-2 ">
+
+        </div>
+      </div>
+      <div className="mt-20 mb-10">
+
+        <div className=" text-[#555356] flex justify-center items-center text-3xl">
+          Thank you!
+        </div>
+        <div className=" text-[#555356] flex justify-center items-center text-3xl">
+          -- Mai Duy & Mai Thủy --
+        </div>
+      </div>
+
+    </div>
+  )
+}
+
 const titleTab = [
   "Cặp đôi",
   "Chuyện tình yêu",
@@ -324,7 +519,7 @@ const titleTab = [
 ];
 const Tab = () => {
   return (
-    <div className="z-50 h-16 bg-gray-500  px-20 flex items-center justify-center absolute w-full">
+    <div className="z-40 h-16 bg-gray-500  px-20 flex items-center justify-center absolute w-full">
       <div className="w-1/4 bg-lime-200 justify-center items-center flex">
         Duy Thủy
       </div>
@@ -338,5 +533,77 @@ const Tab = () => {
     </div>
   );
 };
+
+const FallingHeart = () => {
+  // Tạo vị trí ngẫu nhiên cho trái tim
+  const [leftPosition, setLeftPosition] = useState(`${Math.random() * 100}vw`);
+  const [duration, setDuration] = useState(`${10 + Math.random() * 10}s`);
+  console.log("duration= ", duration);
+
+  useEffect(() => {
+    // Cập nhật vị trí ngẫu nhiên mỗi khi component được render lại
+    setLeftPosition(`${Math.random() * 100}vw`);
+    setDuration(`${10 + Math.random() * 10}s`);
+  }, []);
+
+  return (
+    <div
+      className="absolute top-0 text-red-500 text-3xl animate-fall"
+      style={{ left: leftPosition, animationDuration: duration }}
+    >
+      ❤️
+    </div>
+  );
+};
+
+
+const HeartAnimation = () => {
+  const hearts = Array.from({ length: 10 }); // 20 trái tim
+
+  return (
+    <div className="absolute overflow-hidden h-screen w-full z-50">
+      {hearts.map((_, index) => (
+        <FallingHeart key={index} />
+      ))}
+    </div>
+  );
+};
+
+
+const HeartAnimation1 = () => {
+  const [hearts, setHearts] = useState([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newHeart = {
+        id: Date.now(), // Tạo id duy nhất cho mỗi trái tim
+        left: Math.random() * 100, // Vị trí trái tim ngẫu nhiên theo chiều ngang
+        animationDuration: Math.random() * (40 - 30) + 30, // Thời gian bay ngẫu nhiên
+      };
+      setHearts((prev) => [...prev, newHeart]); // Thêm trái tim mới vào danh sách
+    }, 5000); // Thêm trái tim mỗi giây
+    return () => clearInterval(interval); // Dọn dẹp interval khi component bị hủy
+  }, []);
+
+
+
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none">
+      {hearts.map((heart) => (
+        <div
+          key={heart.id}
+          className="absolute text-2xl animate-heart"
+          style={{
+            left: `calc(${heart.left}% - 30px)`,
+            animationDuration: `${heart.animationDuration}s`,
+          }}
+        >
+          ❤️
+        </div>
+      ))}
+    </div>
+  );
+};
+
 
 export default App;
