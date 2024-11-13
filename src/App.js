@@ -84,7 +84,7 @@ const Button = () => {
     <div className="p-6" ref={ref}>
       <motion.div
         animate={{ x: isInView ? 0 : 100, opacity: isInView ? 1 : 0 }}
-        transition={{ type: "spring", delay: 0.2 }}
+        transition={{ duration: 1, type: "spring", delay: 0.2 }}
         className="h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md text-white"
       >
         <MessageCircle size={17} />
@@ -92,7 +92,7 @@ const Button = () => {
       </motion.div>
       <motion.div
         animate={{ x: isInView ? 0 : -100, opacity: isInView ? 1 : 0 }}
-        transition={{ type: "spring", delay: 0.2 }}
+        transition={{ duration: 1, type: "spring", delay: 0.2 }}
         className=" h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md mt-1 text-white"
       >
         <MessageCircle size={17} />
@@ -100,7 +100,7 @@ const Button = () => {
       </motion.div>
       <motion.div
         animate={{ x: isInView ? 0 : 100, opacity: isInView ? 1 : 0 }}
-        transition={{ type: "spring", delay: 0.2 }}
+        transition={{ duration: 1, type: "spring", delay: 0.2 }}
         className="h-10 bg-[#c9b5b6] flex justify-center items-center rounded-md mt-1 text-white"
       >
         <CircleDollarSign size={17} />
@@ -110,22 +110,7 @@ const Button = () => {
   );
 };
 
-const containerVieo = {
-  hiden: {
-    opacity: 0,
-    y: 100,
-    scale: 0,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring",
-      delay: 0.2,
-    },
-  },
-};
+
 
 const Video = () => {
   const videoOptions = {
@@ -138,51 +123,58 @@ const Video = () => {
 
   const refTitle = useRef(null);
   const refTitle2 = useRef(null);
-
+  const refVideo = useRef(null);
   const isInViewTitle = useInView(refTitle, {
     amount: "all",
   });
   const isInViewTitle2 = useInView(refTitle2, {
     amount: "all",
   });
+  const isInViewVideo = useInView(refVideo, { amount: "all" });
 
   return (
     <div className="bg-[#f6f1f3]">
       <motion.div
         ref={refTitle}
         animate={{ y: isInViewTitle ? 0 : 50, opacity: isInViewTitle ? 1 : 0 }}
-        transition={{ type: "spring", delay: 0.2 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1 }}
         className=" h-24 pt-6 flex justify-center items-center"
       >
         Video Cưới
       </motion.div>
-      <motion.div
-        ref={refTitle2}
-        animate={{
-          y: isInViewTitle2 ? 0 : 50,
-          opacity: isInViewTitle2 ? 1 : 0,
-        }}
-        transition={{ type: "spring", delay: 0.2 }}
-        className=" pb-6  flex justify-center items-center"
-      >
-        Tình yêu không làm cho thế giới quay tròn
-      </motion.div>
+      <div>
+        <motion.div
+          ref={refTitle2}
+          animate={{
+            y: isInViewTitle2 ? 0 : 50,
+            opacity: isInViewTitle2 ? 1 : 0,
+          }}
+          transition={{ type: "spring", delay: 0.2, duration: 1 }}
+          className=" pb-6  flex justify-center items-center"
+        >
+          Tình yêu không làm cho thế giới quay tròn
+        </motion.div>
+      </div>
 
-      <motion.div
-        ref={refTitle2}
-        animate={{
-          scale: isInViewTitle2 ? 1 : 0.5,
-          opacity: isInViewTitle2 ? 1 : 0,
-        }}
-        transition={{ duration: 1, type: "spring", delay: 0.2 }}
-        className="flex justify-center items-center "
-      >
-        <YouTube
-          videoId="aXKi9vo51xQ"
-          opts={videoOptions}
-          className="  overflow-hidden rounded-lg"
-        />
-      </motion.div>
+      <div>
+        <motion.div
+          ref={refVideo}
+          animate={{
+            // scale: isInViewVideo ? 1 : 0.5,
+            opacity: isInViewVideo ? 1 : 0,
+          }}
+          transition={{ duration: 1, type: "spring", delay: 0.2, duration: 1 }}
+          className="flex justify-center items-center "
+        >
+          <YouTube
+            videoId="aXKi9vo51xQ"
+            opts={videoOptions}
+            className="  overflow-hidden rounded-lg"
+          />
+        </motion.div>
+      </div>
+
+
     </div>
   );
 };
@@ -190,36 +182,145 @@ const Video = () => {
 const image = [cuoi1, cuoi2, cuoi3, cuoi4, cuoi5, cuoi6];
 
 const Iamge = () => {
+
+  const refTitle = useRef(null);
+  const refTitle2 = useRef(null);
+  const refVideo = useRef(null);
+  const isInViewTitle = useInView(refTitle, {
+    amount: "all",
+  });
+  const isInViewTitle2 = useInView(refTitle2, {
+    amount: "all",
+  });
+  const isInViewVideo = useInView(refVideo, { amount: "all" });
+  const refImage1 = useRef(null);
+  const isInView1 = useInView(refImage1, { amount: "some" });
+
+  const refImage2 = useRef(null);
+  const isInView2 = useInView(refImage2, { amount: "some" });
+  const refImage3 = useRef(null);
+  const isInView3 = useInView(refImage3, { amount: "some" });
+
+
+  const refAll = useRef(null);
+  const isInViewAll = useInView(refAll, { amount: "all" });
   return (
     <div className="bg-[#f6f1f3]">
-      <div className=" h-28 pt-6 flex justify-center items-center">
-        Album Hình Cưới
+      <div
+        ref={refTitle}
+        className=" h-28 pt-6 flex justify-center items-center ">
+        <motion.div
+          animate={{ y: isInViewTitle ? 0 : 50, opacity: isInViewTitle ? 1 : 0 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1 }}>
+          Album Hình Cưới
+        </motion.div>
+
       </div>
-      <div className=" pb-6  flex justify-center items-center px-6 text-center">
-        Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó
-        sâu sẽ cho bạn dũng khí
+      <div
+        ref={refTitle2}
+
+        className=" pb-6  flex justify-center items-center px-6 text-center ">
+        <motion.div animate={{ y: isInViewTitle2 ? 0 : 50, opacity: isInViewTitle2 ? 1 : 0 }}
+          transition={{ duration: 1, type: "spring", delay: 0.2 }}>
+          Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó
+          sâu sẽ cho bạn dũng khí
+        </motion.div>
+
       </div>
-      <div className=" columns-2 sm:columns-2 lg:columns-3 py-10 md: py:py-20 gap-4 px-4">
-        {image.map((src, index) => {
-          return (
-            <div
-              key={index}
-              className="mb-4 break-inside-avoid border-2 rounded-lg border-white"
-            >
-              <img src={src} className="w-full object-cover rounded-lg" />
-            </div>
-          );
-        })}
+      <div className="  py-10  px-4">
+        <div
+          ref={refImage1}
+          className="mb-4 break-inside-avoid border-2 rounded-lg border-white bg-red-400 flex w-full justify-evenly">
+          <motion.div
+            animate={{ x: isInView1 ? 0 : -40, opacity: isInView1 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1 }}
+            className="mr-1 w-1/2">
+            <img src={cuoi1} className=" object-cover rounded-lg" />
+          </motion.div>
+          <motion.div
+            animate={{ x: isInView1 ? 0 : 40, opacity: isInView1 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1 }}
+
+            className="ml-1 w-1/2">
+            <img src={cuoi2} className=" object-cover rounded-lg" />
+          </motion.div>
+        </div>
+
+        <div
+          ref={refImage2}
+          className="mb-4 break-inside-avoid border-2 rounded-lg border-white bg-red-400 flex justify-evenly"
+        >
+          <motion.div
+            animate={{ x: isInView2 ? 0 : 40, opacity: isInView2 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1 }}
+            className="mr-1 w-1/2"
+          >
+            <img src={cuoi3} className=" object-cover rounded-lg" />
+          </motion.div>
+          <motion.div
+            animate={{ x: isInView2 ? 0 : -40, opacity: isInView2 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1 }}
+            className="ml-1 w-1/2"
+          >
+            <img src={cuoi4} className=" object-cover rounded-lg" />
+          </motion.div>
+        </div>
+
+
+        <div
+          ref={refImage3}
+          className="mb-4 break-inside-avoid border-2 rounded-lg border-white bg-red-400 flex justify-evenly"
+        >
+          <motion.div
+            animate={{ x: isInView3 ? 0 : -40, opacity: isInView3 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1 }}
+            className="mr-1 w-1/2"
+          >
+            <img src={cuoi3} className=" object-cover rounded-lg" />
+          </motion.div>
+          <motion.div
+            animate={{ x: isInView3 ? 0 : 40, opacity: isInView3 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1 }}
+            className="ml-1 w-1/2"
+          >
+            <img src={cuoi4} className=" object-cover rounded-lg" />
+          </motion.div>
+        </div>
+
+
       </div>
-      <div className="flex justify-center items-center">
-        <div className="h-10 w-40 bg-[#c9b5b6] flex justify-center items-center rounded-full text-white">
+      <div
+        ref={refAll}
+        className="flex justify-center items-center">
+        <motion.div
+          animate={{ y: isInViewAll ? 0 : 40, opacity: isInViewAll ? 1 : 0 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1 }}
+
+          className="h-10 w-40 bg-[#c9b5b6] flex justify-center items-center rounded-full text-white">
           <Image size={17} />
           <div className="ml-1">Tất cả ảnh</div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
+
+// const Image
+
+
+// {image.map((src, index) => {
+//   return (
+//     <motion.div
+//       ref={ref}
+//       animate={{ x: isInViewTitle ? 0 : 50, opacity: isInViewTitle ? 1 : 0 }}
+//       transition={{ type: "spring", delay: index * 0.1 }}
+//       key={index}
+//       className="mb-4 break-inside-avoid border-2 rounded-lg border-white bg-red-400"
+//     >
+//       <img src={src} className="w-full object-cover rounded-lg" />
+//     </motion.div>
+//   );
+// })}
 
 const Calendar1 = ({ days, firstDayOfMonth }) => {
   // Hàm tạo lịch
@@ -272,11 +373,10 @@ const Calendar1 = ({ days, firstDayOfMonth }) => {
         <div className="grid grid-cols-7 gap-1" key={index}>
           {week.map((day, idx) => (
             <div
-              className={`p-3 text-center    ${
-                day == 24
-                  ? "bg-[#c19f9d] rounded-full text-white "
-                  : "text-[#bca0ac]"
-              }`}
+              className={`p-3 text-center    ${day == 24
+                ? "bg-[#c19f9d] rounded-full text-white "
+                : "text-[#bca0ac]"
+                }`}
               key={idx}
             >
               {day || ""}
@@ -314,6 +414,13 @@ const Calendar = () => {
     return timeLeft;
   }
 
+
+  const refCalendar = useRef(null);
+  const isInViewCa = useInView(refCalendar, { amount: "some" });
+
+  const refDay = useRef(null);
+  const isInViewDay = useInView(refDay, { amount: "some" });
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
@@ -324,8 +431,31 @@ const Calendar = () => {
 
   return (
     <div className="bg-[#f6f1f3]">
-      <Calendar1 days={days} firstDayOfMonth={firstDayOfMonth} />
-      <div className="p-4 mt-10">
+
+      <motion.div
+        ref={refCalendar}
+        // initial={{ x: 30, y: 60, opacity: 0 }}
+        animate={{
+          // x: isInViewCa ? 0 : 60,
+          // y: isInViewCa ? 0 : 60,
+
+          x: isInViewCa ? 0 : -40,  // Di chuyển từ trái qua phải
+          y: isInViewCa ? 0 : 40,
+          opacity: isInViewCa ? 1 : 0,
+        }}
+        transition={{ type: "spring", delay: 0.2, duration: 1 }}
+      >
+        <Calendar1 days={days} firstDayOfMonth={firstDayOfMonth} />
+      </motion.div>
+
+      <motion.div
+        ref={refDay}
+        animate={{
+          x: isInViewDay ? 0 : 40,
+          y: isInViewDay ? 0 : 40,
+          opacity: isInViewCa ? 1 : 0,
+        }}
+        className="p-4 mt-10">
         {timeLeft.days !== undefined ? (
           <div className="flex justify-around items-center">
             <div className="">
@@ -364,82 +494,210 @@ const Calendar = () => {
         ) : (
           <span></span>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
 
 const ThankYou = () => {
+  const refImage = useRef(null);
+  const isInViewImage = useInView(refImage, { amount: "some" });
+
+  const refText1 = useRef(null);
+  const isInViewText1 = useInView(refText1, { amount: "some" });
+
+  const refText2 = useRef(null);
+  const isInViewText2 = useInView(refText2, { amount: "some" });
+
+  const refText3 = useRef(null);
+  const isInViewText3 = useInView(refText3, { amount: "some" });
+
+  const refText4 = useRef(null);
+  const isInViewText4 = useInView(refText4, { amount: "some" });
+
+
+  const refTextCouple = useRef(null);
+  const isInViewTextCouple = useInView(refTextCouple, { amount: "some" });
+
   return (
     <div className="mt-14 ">
-      <div>
+      <motion.div
+        ref={refImage}
+        animate={{ y: isInViewImage ? 0 : 40, opacity: isInViewImage ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+      >
         <img src={couple} alt="sdsd" />
-      </div>
-      <div className="text-center text-[#a88290] mt-10">
+      </motion.div>
+      <motion.div
+        ref={refText1}
+        animate={{ x: isInViewText1 ? 0 : 40, opacity: isInViewText1 ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        className="text-center text-[#a88290] mt-10">
         Cảm ơn tất cả những người bạn thân yêu của tôi!
-      </div>
-      <div className="text-center px-6 text-[#a88290]">
+      </motion.div>
+      <motion.div
+        ref={refText2}
+        animate={{ x: isInViewText2 ? 0 : -40, opacity: isInViewText2 ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        className="text-center px-6 text-[#a88290]">
         Tôi biết các bạn rất bận rộn, bận rộn với công việc, bận rộn với công
         việc gia đình…
-      </div>
-      <div className="text-center px-6 text-[#a88290]">
+      </motion.div>
+      <motion.div
+        ref={refText3}
+        animate={{ x: isInViewText3 ? 0 : 40, opacity: isInViewText3 ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        className="text-center px-6 text-[#a88290]">
         Nhưng tất cả đã có mặt hôm nay để chúc mừng tinh yêu và hạnh phúc của
         chúng tôi.
-      </div>
-      <div className="text-center px-6 text-[#a88290]">
+      </motion.div>
+      <motion.div
+        ref={refText4}
+        animate={{ x: isInViewText4 ? 0 : -40, opacity: isInViewText4 ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        className="text-center px-6 text-[#a88290]">
         Một lần nữa chân thành cảm ơn tất cả các bạn!
-      </div>
-      <div className="text-center px-6 mt-14 text-[#a88290]">
-        groom{" "}
-        <span className="text-[#bb7996] font-semibold text-2xl">
-          Mai Duy ♥ Mai Thủy{" "}
-        </span>
-        bride
+      </motion.div>
+      <div
+        ref={refTextCouple}
+        className="text-center px-6 mt-14 text-[#a88290] flex justify-evenly items-end">
+        <motion.div
+          animate={{ x: isInViewTextCouple ? 0 : -40, opacity: isInViewTextCouple ? 1 : 0 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        >
+          groom
+        </motion.div>
+        <motion.div
+          animate={{ y: isInViewTextCouple ? 0 : 60, opacity: isInViewTextCouple ? 1 : 0 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1, }}
+          className="text-[#bb7996] font-semibold text-2xl">
+          Mai Duy ♥ Mai Thủy
+        </motion.div>
+        <motion.div
+          animate={{ x: isInViewTextCouple ? 0 : 40, opacity: isInViewTextCouple ? 1 : 0 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        >
+          bride
+        </motion.div>
       </div>
     </div>
   );
 };
 
 const Couple = () => {
+  const refIcon = useRef(null);
+  const isInViewIcon = useInView(refIcon, { amount: "some" });
   return (
-    <div className="p-4 mt-8">
-      <img src={icon} className=" object-cover rounded-lg" />
-      <img src={couple2} className="mt-4 object-cover rounded-lg" />
+    <div
+      ref={refIcon}
+      className="p-4 mt-8">
+      <motion.div
+        animate={{ scale: isInViewIcon ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+      >
+        <img src={icon} className=" object-cover rounded-lg" />
+      </motion.div>
+      <motion.div
+        animate={{ y: isInViewIcon ? 0 : 40, opacity: isInViewIcon ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+      >
+        <img src={couple2} className="mt-4 object-cover rounded-lg" />
+      </motion.div>
+
     </div>
   );
 };
 
 const Groom = () => {
+
+  const refText1 = useRef(null);
+  const isInViewText1 = useInView(refText1, { amount: "some" });
+
+  const refText2 = useRef(null);
+  const isInViewText2 = useInView(refText2, { amount: "some" });
+
+
+  const refImageGroom = useRef(null);
+  const isInViewImageGroom = useInView(refImageGroom, { amount: "some" });
+
+
+  const refImageBride = useRef(null);
+  const isInViewImageBride = useInView(refImageBride, { amount: "some" });
+
+  const refText3 = useRef(null);
+  const isInViewText3 = useInView(refText3, { amount: "some" });
+
+  const refText4 = useRef(null);
+  const isInViewText4 = useInView(refText4, { amount: "some" });
+
   return (
     <div className="p-4 mt-8">
-      <div className=" flex justify-center items-center text-3xl">
+      <motion.div
+        ref={refText1}
+        animate={{ y: isInViewText1 ? 0 : 40, opacity: isInViewText1 ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        className=" flex justify-center items-center text-3xl">
         Cô Dâu & Chú Rể
-      </div>
-      <div className="flex justify-center items-center  mt-4">
+      </motion.div>
+      <motion.div
+        ref={refText2}
+        animate={{ y: isInViewText2 ? 0 : 40, opacity: isInViewText2 ? 1 : 0 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1.1, }}
+        className="flex justify-center items-center  mt-4">
         Giới thiệu một chú rể đẹp trai và cô dâu xinh đẹp
-      </div>
+      </motion.div>
       <div className="mt-8">
-        <img src={groom} className=" object-cover rounded-lg" />
-
-        <div className="flex justify-center items-center mt-2 text-[#5f5e62] font-bold">
+        <motion.div
+          ref={refImageGroom}
+          animate={{ rotateY: isInViewImageGroom ? 0 : 120 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        >
+          <img src={groom} className=" object-cover rounded-lg" />
+        </motion.div>
+        <motion.div
+          ref={refText3}
+          animate={{ y: isInViewText3 ? 0 : -40, opacity: isInViewText3 ? 1 : 0 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1, }}
+          className="flex justify-center items-center mt-2 text-[#5f5e62] font-bold">
           Mai Duy
+        </motion.div>
+        <div className="flex justify-center items-center text-[#847275]">
+          <motion.div
+            animate={{ x: isInViewText3 ? 0 : -40, opacity: isInViewText3 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1, }}>
+            Con ông:
+          </motion.div>
+          <motion.div
+            animate={{ x: isInViewText3 ? 0 : 40, opacity: isInViewText3 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1, }}
+            className="text-[#5f5e62] font-bold ml-2">Mai Văn Hoàng</motion.div>
         </div>
         <div className="flex justify-center items-center text-[#847275]">
-          Con ông:{" "}
-          <span className="text-[#5f5e62] font-bold ml-2">Mai Văn Hoàng</span>
+          <motion.div
+            animate={{ x: isInViewText3 ? 0 : -40, opacity: isInViewText3 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1, }}>
+            Con bà:
+          </motion.div>
+          <motion.div
+            animate={{ x: isInViewText3 ? 0 : 40, opacity: isInViewText3 ? 1 : 0 }}
+            transition={{ type: "spring", delay: 0.2, duration: 1, }}
+            className="text-[#5f5e62] font-bold ml-2">Mai Thị Xuân</motion.div>
         </div>
-        <div className="flex justify-center items-center text-[#847275]">
-          Con bà:{" "}
-          <span className="text-[#5f5e62] font-bold ml-2">Mai Thị Xuân</span>
-        </div>
-        <div className="flex justify-center items-center px-4 text-center text-[#847275]">
+        <motion.div
+          animate={{ y: isInViewText3 ? 0 : 40, opacity: isInViewText3 ? 1 : 0 }}
+          transition={{ type: "spring", delay: 0.2, duration: 1, }}
+          className="flex justify-center items-center px-4 text-center text-[#847275]">
           Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở Hà
           nội...
-        </div>
+        </motion.div>
       </div>
-      <div className="mt-8">
+      <motion.div
+        ref={refImageBride}
+        animate={{ rotateY: isInViewImageGroom ? 0 : -120 }}
+        transition={{ type: "spring", delay: 0.2, duration: 1, }}
+        className="mt-8">
         <img src={bride} className=" object-cover rounded-lg" />
-      </div>
+      </motion.div>
 
       <div className="flex justify-center items-center mt-2 text-[#5f5e62] font-bold">
         Mai Thủy
@@ -588,7 +846,7 @@ const Tab = () => {
       <div className="w-1/4 bg-lime-200 justify-center items-center flex">
         Duy Thủy
       </div>
-      <div className="w-3/4 flex  justify-center items-center bg-red-500">
+      <div className="w-3/4 flex  justify-center items-center ">
         {titleTab.map((name, index) => (
           <div key={index} className="px-5 py-4 text-center ">
             {name}

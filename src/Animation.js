@@ -12,11 +12,11 @@ export const ScrollAnimations = () => {
     <div className="bg-zinc-950 text-zinc-50">
       <div className="relative z-10">
         <div className="h-[150vh]" />
-        {/* <WhileInView /> */}
+        <WhileInView />
         <UseInView />
-        {/* <UseScrollBasic /> */}
-        {/* <UseScrollAdvanced /> */}
-        {/* <UseScrollWithContainer /> */}
+        <UseScrollBasic />
+        <UseScrollAdvanced />
+        <UseScrollWithContainer />
         <div className="h-[150vh]" />
       </div>
       <div
