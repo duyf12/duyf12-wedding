@@ -18,7 +18,7 @@ module.exports = {
           },
           '100%': {
             transform: 'translateY(-100vh) rotate(-10deg)', // Lắc nhẹ sang trái khi đến đỉnh
-            opacity: 0.1, // Mờ dần khi lên gần trên cùng
+            opacity: 0.2, // Mờ dần khi lên gần trên cùng
           },
         },
       },
