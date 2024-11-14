@@ -1,16 +1,32 @@
 {
   "files": {
-    "main.css": "/duyf12-wedding/static/css/main.e253f7e8.css",
-    "main.js": "/duyf12-wedding/static/js/main.ffcbddb3.js",
+    "main.css": "/duyf12-wedding/static/css/main.f70ff679.css",
+    "main.js": "/duyf12-wedding/static/js/main.d45d1548.js",
     "static/js/453.7e3e3be8.chunk.js": "/duyf12-wedding/static/js/453.7e3e3be8.chunk.js",
+    "static/media/hoa2.png": "/duyf12-wedding/static/media/hoa2.68ecd285668a215b66c1.png",
+    "static/media/couple.png": "/duyf12-wedding/static/media/couple.20d474e0bf10c67f6e24.png",
+    "static/media/cuoi5.jpg": "/duyf12-wedding/static/media/cuoi5.c4b83559c24ce1343531.jpg",
+    "static/media/test1.jpg": "/duyf12-wedding/static/media/test1.41ec296ad7430f2657ec.jpg",
+    "static/media/cuoi6.jpg": "/duyf12-wedding/static/media/cuoi6.b30082e22984c90d8802.jpg",
+    "static/media/bride.png": "/duyf12-wedding/static/media/bride.332036ed0e38cbc3d131.png",
+    "static/media/main_bg.png": "/duyf12-wedding/static/media/main_bg.3d6cfb95d16b218e0f7a.png",
+    "static/media/nhagai.png": "/duyf12-wedding/static/media/nhagai.5fdb81a5c40add352aa7.png",
+    "static/media/groom.jpg": "/duyf12-wedding/static/media/groom.9b95be031a84f00eb6fc.jpg",
+    "static/media/cuoi1.jpg": "/duyf12-wedding/static/media/cuoi1.9d00f37d0f4be2953382.jpg",
+    "static/media/cuoi4.jpg": "/duyf12-wedding/static/media/cuoi4.0df80d3a99b4f0b931ec.jpg",
+    "static/media/sub_title.png": "/duyf12-wedding/static/media/sub_title.b58aa54f19230b8a331d.png",
+    "static/media/nhatrai.jpeg": "/duyf12-wedding/static/media/nhatrai.1f6b40757842c663f847.jpeg",
+    "static/media/icon.png": "/duyf12-wedding/static/media/icon.ce5f452e8bb0accae839.png",
+    "static/media/cuoi3.jpg": "/duyf12-wedding/static/media/cuoi3.7dcd93af43cf3c950306.jpg",
+    "static/media/cuoi2.jpg": "/duyf12-wedding/static/media/cuoi2.dfdfb55393d9d8351aa3.jpg",
     "static/media/logo.svg": "/duyf12-wedding/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/duyf12-wedding/index.html",
-    "main.e253f7e8.css.map": "/duyf12-wedding/static/css/main.e253f7e8.css.map",
-    "main.ffcbddb3.js.map": "/duyf12-wedding/static/js/main.ffcbddb3.js.map",
+    "main.f70ff679.css.map": "/duyf12-wedding/static/css/main.f70ff679.css.map",
+    "main.d45d1548.js.map": "/duyf12-wedding/static/js/main.d45d1548.js.map",
     "453.7e3e3be8.chunk.js.map": "/duyf12-wedding/static/js/453.7e3e3be8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e253f7e8.css",
-    "static/js/main.ffcbddb3.js"
+    "static/css/main.f70ff679.css",
+    "static/js/main.d45d1548.js"
   ]
 }
