@@ -33,7 +33,7 @@ function App() {
         Đi đến Section 2
       </button>
       <button
-        onClick={() => scrollToSection(section3Ref)}
+        onClick={() => section3Ref}
         className="mb-2 p-2 bg-blue-500 text-white rounded"
       >
         Đi đến Section 3
