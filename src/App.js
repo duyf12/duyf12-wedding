@@ -56,14 +56,13 @@ function App() {
     <div className="bg-[#f6f1f3]">
       <Home />
 
+      <Video />
+      <Iamge />
       <Button
         onclick={(type) => {
           togleButton(type);
         }}
       />
-      <Video />
-      <Iamge />
-
       <Calendar />
       <IamgeLife />
       <ThankYou />
@@ -438,7 +437,7 @@ const Iamge = () => {
             <img
               src={image.src}
               alt={`Image ${index + 1}`}
-              className="transform transition duration-500 hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+              className="transform transition duration-500  sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
             />
           </motion.div>
         ))}
@@ -532,7 +531,7 @@ const IamgeLife = () => {
             <img
               src={image.src}
               alt={`Image ${index + 1}`}
-              className="transform transition duration-500 hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+              className="transform transition duration-500 sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
             />
           </motion.div>
         ))}
@@ -838,7 +837,7 @@ const Couple = () => {
         <img
           src={couple2}
           alt="jhuj"
-          className="transform transition duration-500 hover:scale-125 mt-4 object-cover rounded-lg h-[60vh] "
+          className="transform transition duration-500 sm:hover:scale-125 mt-4 object-cover rounded-lg h-[60vh] "
         />
       </motion.div>
     </div>
@@ -895,7 +894,7 @@ const Groom = () => {
             <img
               src={groom}
               alt="koko"
-              className=" transform transition duration-500 hover:scale-125  w-[50vh]  object-cover rounded-lg"
+              className=" transform transition duration-500 sm:hover:scale-125  w-[50vh]  object-cover rounded-lg"
             />
           </motion.div>
           <motion.div
@@ -975,7 +974,7 @@ const Groom = () => {
             <img
               src={bride}
               alt="sds"
-              className="transform transition duration-500 hover:scale-125  w-[50vh]  object-cover rounded-lg"
+              className="transform transition duration-500 sm:hover:scale-125  w-[50vh]  object-cover rounded-lg"
             />
           </motion.div>
 
@@ -1608,12 +1607,12 @@ const End = () => {
             <img
               src={hoa2}
               alt="Circular frame"
-              className="transition duration-500 hover:scale-105 z-20  absolute  bg-center bg-cover    "
+              className="transition duration-500 sm:hover:scale-105 z-20  absolute  bg-center bg-cover    "
             />
             <img
               src={cuoi1}
-              alt="Your photo"
-              className="transition duration-500 hover:scale-125 w-[300px] h-[300px]  ml-4 mt-4 z-10 absolute  bg-center bg-cover rounded-full   object-cover"
+              alt="Your photso"
+              className=" w-[300px] h-[300px]  ml-4 mt-4 z-10 absolute  bg-center bg-cover rounded-full   object-cover"
             />
           </motion.div>
         </div>
