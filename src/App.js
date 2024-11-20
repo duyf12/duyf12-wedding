@@ -2,27 +2,55 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useRef, useEffect, useState } from "react";
+
+import cuoinho from "./images/cuoingo.png";
 import cuoi1 from "./images/cuoi1.jpg";
 import cuoi2 from "./images/cuoi2.jpg";
 import cuoi3 from "./images/cuoi3.jpg";
 import cuoi4 from "./images/cuoi4.jpg";
 import cuoi5 from "./images/cuoi5.jpg";
 import cuoi6 from "./images/cuoi6.jpg";
+import cuoi7 from "./images/cuoi7.jpg";
+import cuoi8 from "./images/cuoi8.jpg";
+import cuoi9 from "./images/cuoi9.jpg";
 
 import couple from "./images/sub_title.png";
-import couple2 from "./images/couple.png";
+import couple2 from "./images/couple.jpg";
 import icon from "./images/icon.png";
 
-import bride from "./images/bride.png";
+import bride from "./images/bride.jpg";
 import groom from "./images/groom.jpg";
 import nhagai from "./images/nhagai.png";
-import nhatrai from "./images/nhatrai.jpeg";
+import nhatrai from "./images/nhatrai.png";
 
 import main_bg from "./images/main_bg.png";
 import hoa2 from "./images/hoa2.png";
 
 import test1 from "./images/test1.jpg";
 
+import qrbride from "./images/qrbride.png";
+import qrgroom from "./images/qrgroom.png";
+
+import thuy from "./images/thuy.png";
+
+import mo1 from "./images/moment/mo1.jpg";
+import mo2 from "./images/moment/mo2.jpg";
+import mo3 from "./images/moment/mo3.jpg";
+import mo4 from "./images/moment/mo4.jpg";
+import mo5 from "./images/moment/mo5.jpg";
+import mo6 from "./images/moment/mo6.jpg";
+import mo7 from "./images/moment/mo7.jpg";
+import mo8 from "./images/moment/mo8.jpg";
+import mo9 from "./images/moment/mo9.jpg";
+import mo10 from "./images/moment/mo10.jpg";
+import mo11 from "./images/moment/mo11.jpg";
+import mo12 from "./images/moment/mo12.jpg";
+import mo13 from "./images/moment/mo13.jpg";
+import mo14 from "./images/moment/mo14.jpg";
+import mo15 from "./images/moment/mo15.jpg";
+import mo16 from "./images/moment/mo16.jpg";
+import mo17 from "./images/moment/mo17.jpg";
+import mo18 from "./images/moment/mo18.jpg";
 import { CircleDollarSign, MessageCircle, Image } from "lucide-react";
 import YouTube from "react-youtube";
 import { ref, push, set, onValue, remove } from "firebase/database";
@@ -36,16 +64,10 @@ import {
   useTransform,
 } from "framer-motion";
 function App() {
-  const refHome = useRef(null);
-  const refButton = useRef(null);
-  const refVideo = useRef(null);
   const refMessage = useRef(null);
   const refMoney = useRef(null);
 
-  console.log("Firebase Database:", database);
   const togleButton = (type) => {
-    console.log("vào đây");
-
     if (type == "money") {
       refMoney.current.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -56,7 +78,7 @@ function App() {
     <div className="bg-[#f6f1f3]">
       <Home />
 
-      <Video />
+      {/* <Video /> */}
       <Iamge />
       <Button
         onclick={(type) => {
@@ -80,17 +102,6 @@ function App() {
     </div>
   );
 }
-
-// <div
-//             style={{ backgroundImage: `url(${cuoi1})` }}
-//             className=" h-[400px] w-[400px] bg-center bg-cover rounded-full "
-//           ></div>
-
-// <img
-// src={cuoi1}
-// alt="Your photo"
-// className="w-[380px] h-[380px]  z-10 absolute  bg-center bg-cover rounded-full   object-cover"
-// />
 
 const Home = () => {
   const refImage = useRef(null);
@@ -127,8 +138,8 @@ const Home = () => {
                 className="z-20  absolute  bg-center bg-cover    "
               />
               <img
-                src={cuoi1}
-                alt="Your photo"
+                src={cuoinho}
+                alt="Your phosto"
                 className="w-[330px] h-[330px]  z-10 absolute  bg-center bg-cover rounded-full   object-cover"
               />
             </motion.div>
@@ -370,6 +381,21 @@ const Iamge = () => {
   const refImage1 = useRef(null);
   const refImage2 = useRef(null);
   const refImage3 = useRef(null);
+
+  const refImage4 = useRef(null);
+  const refImage5 = useRef(null);
+
+  const refImage6 = useRef(null);
+
+  const refImageMobile1 = useRef(null);
+  const refImageMobile2 = useRef(null);
+  const refImageMobile3 = useRef(null);
+  const refImageMobile4 = useRef(null);
+  const refImageMobile5 = useRef(null);
+  const refImageMobile6 = useRef(null);
+  const refImageMobile7 = useRef(null);
+  const refImageMobile8 = useRef(null);
+  const refImageMobile9 = useRef(null);
   const refImage = useRef(null);
   const refAll = useRef(null);
 
@@ -378,6 +404,22 @@ const Iamge = () => {
   const isInView1 = useInView(refImage1, { amount: "some" });
   const isInView2 = useInView(refImage2, { amount: "some" });
   const isInView3 = useInView(refImage3, { amount: "some" });
+  const isInView4 = useInView(refImage4, { amount: "some" });
+  const isInView5 = useInView(refImage5, { amount: "some" });
+  const isInView6 = useInView(refImage6, { amount: "some" });
+
+  const isInViewMobile1 = useInView(refImageMobile1, { amount: "some" });
+  const isInViewMobile2 = useInView(refImageMobile2, { amount: "some" });
+
+  const isInViewMobile3 = useInView(refImageMobile3, { amount: "some" });
+  const isInViewMobile4 = useInView(refImageMobile4, { amount: "some" });
+
+  const isInViewMobile5 = useInView(refImageMobile5, { amount: "some" });
+  const isInViewMobile6 = useInView(refImageMobile6, { amount: "some" });
+
+  const isInViewMobile7 = useInView(refImageMobile7, { amount: "some" });
+  const isInViewMobile8 = useInView(refImageMobile8, { amount: "some" });
+  const isInViewMobile9 = useInView(refImageMobile9, { amount: "some" });
   const isInViewAll = useInView(refAll, { amount: "all" });
 
   return (
@@ -415,7 +457,7 @@ const Iamge = () => {
       </div>
 
       {/* Grid hình ảnh */}
-      <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500">
+      {/* <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500">
         {[
           { src: cuoi1 },
           { src: cuoi2 },
@@ -441,6 +483,254 @@ const Iamge = () => {
             />
           </motion.div>
         ))}
+      </div> */}
+
+      <div className="  hidden sm:grid gap-4  grid-cols-3 transition-all duration-500">
+        {[{ src: cuoi3 }, { src: cuoi1 }, { src: cuoi2 }].map(
+          (image, index) => (
+            <motion.div
+              key={index}
+              ref={
+                index === 0 ? refImage1 : index === 1 ? refImage2 : refImage1
+              }
+              animate={{
+                y:
+                  index === 0
+                    ? isInView1
+                      ? 0
+                      : -40
+                    : index === 1
+                    ? isInView2
+                      ? 0
+                      : 40
+                    : isInView1
+                    ? 0
+                    : -40,
+                opacity: isInView2 ? 1 : 0,
+              }}
+              transition={{ type: "spring", delay: 0.2, duration: 1 }}
+              className=" mb-4 break-inside-avoid  overflow-hidden"
+            >
+              <img
+                src={image.src}
+                alt={`Imagsde ${index + 1}`}
+                className="transform transition duration-500  sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+              />
+            </motion.div>
+          )
+        )}
+      </div>
+
+      <div className="  hidden sm:grid gap-4  grid-cols-3 transition-all duration-500">
+        {[{ src: cuoi4 }, { src: cuoi7 }, { src: cuoi6 }].map(
+          (image, index) => (
+            <motion.div
+              key={index}
+              ref={
+                index === 0 ? refImage3 : index === 1 ? refImage4 : refImage3
+              }
+              animate={{
+                y:
+                  index === 0
+                    ? isInView3
+                      ? 0
+                      : -40
+                    : index === 1
+                    ? isInView4
+                      ? 0
+                      : 40
+                    : isInView3
+                    ? 0
+                    : -40,
+                opacity: isInView3 ? 1 : 0,
+              }}
+              transition={{ type: "spring", delay: 0.2, duration: 1 }}
+              className=" mb-4 break-inside-avoid  overflow-hidden"
+            >
+              <img
+                src={image.src}
+                alt={`Imaage ${index + 1}`}
+                className="transform transition duration-500  sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+              />
+            </motion.div>
+          )
+        )}
+      </div>
+
+      <div className="  hidden sm:grid gap-4  grid-cols-3 transition-all duration-500">
+        {[{ src: cuoi9 }, { src: cuoi8 }, { src: cuoi5 }].map(
+          (image, index) => (
+            <motion.div
+              key={index}
+              ref={
+                index === 0 ? refImage5 : index === 1 ? refImage6 : refImage5
+              }
+              animate={{
+                y:
+                  index === 0
+                    ? isInView5
+                      ? 0
+                      : -40
+                    : index === 1
+                    ? isInView6
+                      ? 0
+                      : 40
+                    : isInView5
+                    ? 0
+                    : -40,
+                opacity: isInView5 ? 1 : 0,
+              }}
+              transition={{ type: "spring", delay: 0.2, duration: 1 }}
+              className=" mb-4 break-inside-avoid  overflow-hidden"
+            >
+              <img
+                src={image.src}
+                alt={`Image ${index + 1}`}
+                className="transform transition duration-500  sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+              />
+            </motion.div>
+          )
+        )}
+      </div>
+
+      {/* mobile */}
+      <div className=" grid sm:hidden  gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500">
+        {[
+          { src: cuoi1 },
+          { src: cuoi2 },
+          { src: cuoi6 },
+          { src: cuoi3 },
+          { src: cuoi4 },
+          { src: cuoi9 },
+        ].map((image, index) => (
+          <motion.div
+            key={index}
+            ref={
+              index === 0
+                ? refImageMobile1
+                : index === 1
+                ? refImageMobile2
+                : index === 2
+                ? refImageMobile3
+                : index === 3
+                ? refImageMobile4
+                : index === 4
+                ? refImageMobile5
+                : refImageMobile6
+            }
+            animate={{
+              // y: index % 2 === 0 ? (isInView2 ? 0 : -40) : isInView2 ? 0 : 40,
+              y:
+                index === 0
+                  ? isInViewMobile1
+                    ? 0
+                    : -40
+                  : index === 1
+                  ? isInViewMobile2
+                    ? 0
+                    : 40
+                  : index === 2
+                  ? isInViewMobile3
+                    ? 0
+                    : -40
+                  : index === 3
+                  ? isInViewMobile4
+                    ? 0
+                    : 40
+                  : index === 4
+                  ? isInViewMobile5
+                    ? 0
+                    : -40
+                  : isInViewMobile6
+                  ? 0
+                  : 40,
+
+              opacity:
+                index === 0
+                  ? isInViewMobile1
+                    ? 1
+                    : 0
+                  : index === 1
+                  ? isInViewMobile2
+                    ? 1
+                    : 0
+                  : index === 2
+                  ? isInViewMobile3
+                    ? 1
+                    : 0
+                  : index === 3
+                  ? isInViewMobile4
+                    ? 1
+                    : 0
+                  : index === 4
+                  ? isInViewMobile5
+                    ? 1
+                    : 0
+                  : isInViewMobile6
+                  ? 1
+                  : 0,
+            }}
+            transition={{ type: "spring", delay: 0.2, duration: 1 }}
+            className=" mb-4 break-inside-avoid  overflow-hidden"
+          >
+            <img
+              src={image.src}
+              alt={`Imaqge ${index + 1}`}
+              className="transform transition duration-500 sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      <div className=" grid sm:hidden  gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500">
+        {[{ src: cuoi7 }, { src: cuoi8 }, { src: cuoi5 }].map(
+          (image, index) => (
+            <motion.div
+              key={index}
+              ref={
+                index === 0
+                  ? refImageMobile7
+                  : index === 1
+                  ? refImageMobile8
+                  : refImageMobile9
+              }
+              animate={{
+                y:
+                  index === 0
+                    ? isInViewMobile7
+                      ? 0
+                      : -40
+                    : index === 1
+                    ? isInViewMobile8
+                      ? 0
+                      : 40
+                    : isInViewMobile9
+                    ? 0
+                    : -40,
+                opacity:
+                  index === 0
+                    ? isInViewMobile7
+                      ? 1
+                      : 0
+                    : index === 1
+                    ? isInViewMobile8
+                      ? 1
+                      : 0
+                    : isInViewMobile9
+                    ? 1
+                    : 0,
+              }}
+              transition={{ type: "spring", delay: 0.2, duration: 1 }}
+              className=" mb-4 break-inside-avoid  overflow-hidden"
+            >
+              <img
+                src={image.src}
+                alt={`Imasage ${index + 1}`}
+                className="transform transition duration-500 sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+              />
+            </motion.div>
+          )
+        )}
       </div>
 
       {/* Button Xem tất cả */}
@@ -509,29 +799,40 @@ const IamgeLife = () => {
       </div>
 
       {/* Grid hình ảnh */}
-      <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500">
+      <div className="columns-4 sm:columns-5 lg:columns-5 py-10 md: py:py-20 gap-4 px-4">
         {[
-          { src: cuoi1 },
-          { src: cuoi2 },
-          { src: cuoi3 },
-          { src: cuoi4 },
-          { src: cuoi5 },
-          { src: cuoi6 },
+          { src: mo1 },
+          { src: mo2 },
+          { src: mo3 },
+          { src: mo4 },
+          { src: mo5 },
+          { src: mo6 },
+          { src: mo7 },
+          { src: mo8 },
+          { src: mo9 },
+          { src: mo10 },
+          { src: mo11 },
+          { src: mo12 },
+          { src: mo13 },
+          { src: mo14 },
+          { src: mo15 },
+          { src: mo16 },
+          { src: mo17 },
+          { src: mo18 },
         ].map((image, index) => (
           <motion.div
             key={index}
             ref={index === 0 ? refImage1 : index === 1 ? refImage2 : refImage3}
             animate={{
               y: index % 2 === 0 ? (isInView2 ? 0 : -40) : isInView2 ? 0 : 40,
-              opacity: isInView2 ? 1 : 0,
             }}
             transition={{ type: "spring", delay: 0.2, duration: 1 }}
-            className=" mb-4 break-inside-avoid  overflow-hidden"
+            className=" mb-4 break-inside-avoid border-2 rounded-lg border-white"
           >
             <img
               src={image.src}
-              alt={`Image ${index + 1}`}
-              className="transform transition duration-500 sm:hover:scale-125 w-full object-cover rounded-lg border-2  border-white"
+              alt={`Imassge ${index + 1}`}
+              className="transform transition duration-500 sm:hover:scale-105  w-full object-cover border-2  border-white bject-cover rounded-lg"
             />
           </motion.div>
         ))}
@@ -882,7 +1183,7 @@ const Groom = () => {
         Giới thiệu một chú rể đẹp trai và cô dâu xinh gái
       </motion.div>
       <div className="block sm:flex justify-center transition-all duration-500">
-        <div className="mt-8 ">
+        <div className="mt-8  w-full sm:w-1/2 ">
           <motion.div
             ref={refImageGroom}
             animate={{
@@ -956,20 +1257,21 @@ const Groom = () => {
               opacity: isInViewText3 ? 1 : 0,
             }}
             transition={{ type: "spring", delay: 0.2, duration: 1 }}
-            className="flex justify-center items-center px-4 text-center text-[#847275]"
+            className="flex justify-center items-center px-4 text-center text-[#847275] whitespace-normal break-words overflow-hidden"
           >
-            Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở
-            Hà nội...
+            Là một lập trình viên tài năng, rất đẹp trai và tốt bụng. Đặc biệt,
+            còn "siêu siêu" yêu vợ, luôn quan tâm và trân trọng cô trong từng
+            khoảnh khắc.
           </motion.div>
         </div>
-        <div>
+        <div className="w-full sm:w-1/2 ">
           <motion.div
             ref={refImageBride}
             animate={{
               opacity: isInViewImageBride ? 1 : 0,
             }}
             transition={{ type: "spring", delay: 0.2, duration: 1 }}
-            className="flex justify-center items-center mt-8 "
+            className=" flex justify-center items-center mt-8 "
           >
             <img
               src={bride}
@@ -1010,7 +1312,7 @@ const Groom = () => {
               Mai Văn Thành
             </motion.div>
           </div>
-          <div className="flex justify-center items-center text-[#847275]">
+          <div className=" flex justify-center items-center text-[#847275]">
             <motion.div
               animate={{
                 y: isInViewText4 ? 0 : -40,
@@ -1039,8 +1341,9 @@ const Groom = () => {
             transition={{ type: "spring", delay: 0.2, duration: 1 }}
             className="flex justify-center items-center px-4 text-center text-[#847275]"
           >
-            Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở
-            Hà nội...
+            Là một dược sĩ xinh đẹp, đáng yêu và đầy duyên dáng. Dù đôi lúc có
+            hơi nóng tính, nhưng chính sự chân thành và ngọt ngào của cô dâu
+            luôn khiến mọi người xung quanh yêu mến.
           </motion.div>
         </div>
       </div>
@@ -1396,7 +1699,7 @@ const Money = () => {
         <div className="mt-8  bg-white sm:mr-20 mr-0 py-4 rounded-lg">
           <motion.div
             animate={{
-              opacity: isInViewImageBride ? 1 : 0,
+              opacity: isInViewImageGroom ? 1 : 0,
             }}
             transition={{ type: "spring", delay: 0.2, duration: 1 }}
             className="flex justify-center items-center mb-4 "
@@ -1412,7 +1715,7 @@ const Money = () => {
             className="flex justify-center items-center px-4"
           >
             <img
-              src={groom}
+              src={qrgroom}
               alt="koko"
               className="  w-[30vh]  object-cover rounded-lg"
             />
@@ -1461,7 +1764,7 @@ const Money = () => {
               transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className="text-[#5f5e62] font-bold ml-2"
             >
-              Mai Văn Duy
+              MAI VAN DUY
             </motion.div>
           </div>
           <div className="flex justify-center items-center text-[#847275]">
@@ -1482,7 +1785,7 @@ const Money = () => {
               transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className="text-[#5f5e62] font-bold ml-2"
             >
-              1871263871628736
+              9690125031997
             </motion.div>
           </div>
         </div>
@@ -1505,7 +1808,7 @@ const Money = () => {
             className="flex justify-center items-center   mx-4 "
           >
             <img
-              src={bride}
+              src={qrbride}
               alt="sds"
               className=" w-[30vh]  object-cover rounded-lg"
             />
@@ -1532,7 +1835,7 @@ const Money = () => {
               transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className="text-[#5f5e62] font-bold ml-2"
             >
-              MB bank
+              VietinBank
             </motion.div>
           </div>
           <div className="flex justify-center items-center text-[#847275]">
@@ -1553,7 +1856,7 @@ const Money = () => {
               transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className="text-[#5f5e62] font-bold ml-2"
             >
-              Mai Văn Duy
+              MAI THI THUY
             </motion.div>
           </div>
           <div className="flex justify-center items-center text-[#847275]">
@@ -1574,7 +1877,7 @@ const Money = () => {
               transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className="text-[#5f5e62] font-bold ml-2"
             >
-              8723487234324
+              106003002885
             </motion.div>
           </div>
         </div>
@@ -1610,7 +1913,7 @@ const End = () => {
               className="transition duration-500 sm:hover:scale-105 z-20  absolute  bg-center bg-cover    "
             />
             <img
-              src={cuoi1}
+              src={thuy}
               alt="Your photso"
               className=" w-[300px] h-[300px]  ml-4 mt-4 z-10 absolute  bg-center bg-cover rounded-full   object-cover"
             />
