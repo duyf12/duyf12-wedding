@@ -776,7 +776,7 @@ const IamgeLife = () => {
           transition={{ type: "spring", delay: 0.2, duration: 1 }}
           className="font-script text-4xl md:text-5xl font-semibold text-center text-[#a88290] transition-all duration-500"
         >
-          Những khoẳng khắc
+          Những khoảnh khắc
         </motion.div>
       </div>
 
@@ -1476,7 +1476,7 @@ const Event = () => {
             className="  mt-2  font-bold"
           >
             <div className="text-[#555356]">
-              <span className="font-medium">LỄ Thành Hôn</span> - 13h50
+              <span className="font-medium">LỄ THÀNH HÔN</span> - 13h50
               24/11/2024
             </div>
             <div className="text-[#847275] mt-2">
