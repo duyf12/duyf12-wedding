@@ -1637,7 +1637,7 @@ const Message = () => {
       <motion.div className="mt-6 flex justify-center items-center">
         <div
           ref={refTextInput2}
-          className="w-full sm:w-[500px] bg-[#ecd9d9] p-3 rounded-lg mt-4 transition-all duration-500"
+          className="w-full sm:w-[500px] h-[500px] overflow-auto bg-[#ecd9d9] p-3 rounded-lg mt-4 transition-all duration-500"
         >
           {messages.map((name, index) => {
             return (
