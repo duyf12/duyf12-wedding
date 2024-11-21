@@ -592,7 +592,7 @@ const Iamge = () => {
                 opacity: isInView5 ? 1 : 0,
               }}
               transition={{ type: "spring", delay: 0.2, duration: 1 }}
-              className=" mb-4 break-inside-avoid  overflow-hidden  bg-red-400  "
+              className=" mb-4 break-inside-avoid  overflow-hidden   "
             >
               <img
                 src={image.src}
@@ -694,7 +694,7 @@ const Iamge = () => {
       </div>
 
       <div className=" grid sm:hidden  gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 transition-all duration-500">
-        {[{ src: cuoi7 }, { src: cuoi8 }, { src: cuoi5 }].map(
+        {[{ src: cuoi7 }, { src: cuoi8 }, { src: cuoi22 }].map(
           (image, index) => (
             <motion.div
               key={index}
@@ -775,6 +775,57 @@ const IamgeLife = () => {
   const isInView3 = useInView(refImage3, { amount: "some" });
   const isInViewAll = useInView(refAll, { amount: "all" });
 
+  const ref0 = useRef(null);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const ref5 = useRef(null);
+  const ref6 = useRef(null);
+  const ref7 = useRef(null);
+  const ref8 = useRef(null);
+  const ref9 = useRef(null);
+  const ref10 = useRef(null);
+  const ref11 = useRef(null);
+  const ref12 = useRef(null);
+  const ref13 = useRef(null);
+  const ref14 = useRef(null);
+  const ref15 = useRef(null);
+  const ref16 = useRef(null);
+  const ref17 = useRef(null);
+  const ref18 = useRef(null);
+  const ref19 = useRef(null);
+  const ref20 = useRef(null);
+
+  const is0 = useInView(ref0, { amount: "some" });
+  const is1 = useInView(ref1, { amount: "some" });
+  const is2 = useInView(ref2, { amount: "some" });
+  const is3 = useInView(ref3, { amount: "some" });
+  const is4 = useInView(ref4, { amount: "some" });
+  const is5 = useInView(ref5, { amount: "some" });
+  const is6 = useInView(ref6, { amount: "some" });
+  const is7 = useInView(ref7, { amount: "some" });
+  const is8 = useInView(ref8, { amount: "some" });
+  const is9 = useInView(ref9, { amount: "some" });
+  const is10 = useInView(ref10, { amount: "some" });
+  const is11 = useInView(ref11, { amount: "some" });
+  const is12 = useInView(ref12, { amount: "some" });
+  const is13 = useInView(ref13, { amount: "some" });
+  const is14 = useInView(ref14, { amount: "some" });
+  const is15 = useInView(ref15, { amount: "some" });
+  const is16 = useInView(ref16, { amount: "some" });
+  const is17 = useInView(ref17, { amount: "some" });
+  const is18 = useInView(ref18, { amount: "some" });
+  const is19 = useInView(ref19, { amount: "some" });
+  const is20 = useInView(ref20, { amount: "some" });
+
+  const refvideo = useRef(null);
+  const isVideo = useInView(refvideo, { amount: "some" });
+  const videoOptions = {
+    playerVars: {
+      autoplay: 1,
+    },
+  };
   return (
     <div className="font-sans bg-[#f6f1f3] py-6 px-4">
       {/* Tiêu đề chính */}
@@ -833,25 +884,155 @@ const IamgeLife = () => {
           { src: mo18 },
           { src: mo19 },
           { src: mo21 },
-
           { src: cuoi5 },
-        ].map((image, index) => (
-          <motion.div
-            key={index}
-            ref={index === 0 ? refImage1 : index === 1 ? refImage2 : refImage3}
-            animate={{
-              y: index % 2 === 0 ? (isInView2 ? 0 : -40) : isInView2 ? 0 : 40,
-            }}
-            transition={{ type: "spring", delay: 0.2, duration: 1 }}
-            className=" mb-4 break-inside-avoid border-2 rounded-lg border-white"
-          >
-            <img
-              src={image.src}
-              alt={`Imassge ${index + 1}`}
-              className="transform transition duration-500 sm:hover:scale-105  w-full object-cover border-2  border-white bject-cover rounded-lg"
-            />
-          </motion.div>
-        ))}
+        ].map((image, index) => {
+          // 7 13 17
+          if (index == 7) {
+            console.log("iamge = ", image);
+          }
+          return (
+            <motion.div
+              key={index}
+              ref={
+                index === 0
+                  ? ref0
+                  : index === 1
+                  ? ref1
+                  : index == 2
+                  ? ref2
+                  : index == 3
+                  ? ref3
+                  : index == 4
+                  ? ref4
+                  : index == 5
+                  ? ref5
+                  : index == 6
+                  ? ref6
+                  : index == 7
+                  ? ref7
+                  : index == 8
+                  ? ref8
+                  : index == 9
+                  ? ref9
+                  : index == 10
+                  ? ref10
+                  : index == 11
+                  ? ref11
+                  : index == 12
+                  ? ref12
+                  : index == 13
+                  ? ref13
+                  : index == 14
+                  ? ref14
+                  : index == 15
+                  ? ref15
+                  : index == 16
+                  ? ref16
+                  : index == 17
+                  ? ref17
+                  : index == 18
+                  ? ref18
+                  : index == 19
+                  ? ref19
+                  : ref20
+              }
+              animate={{
+                y:
+                  index === 0
+                    ? is0
+                      ? 0
+                      : -40
+                    : index === 1
+                    ? is1
+                      ? 0
+                      : -40
+                    : index == 2
+                    ? is2
+                      ? 0
+                      : -40
+                    : index == 3
+                    ? is3
+                      ? 0
+                      : -40
+                    : index == 4
+                    ? is4
+                      ? 0
+                      : -40
+                    : index == 5
+                    ? is5
+                      ? 0
+                      : -40
+                    : index == 6
+                    ? is6
+                      ? 0
+                      : -40
+                    : index == 7
+                    ? is7
+                      ? 0
+                      : -40
+                    : index == 8
+                    ? is8
+                      ? 0
+                      : -40
+                    : index == 9
+                    ? is9
+                      ? 0
+                      : -40
+                    : index == 10
+                    ? is10
+                      ? 0
+                      : -40
+                    : index == 11
+                    ? is11
+                      ? 0
+                      : -40
+                    : index == 12
+                    ? is12
+                      ? 0
+                      : -40
+                    : index == 13
+                    ? is13
+                      ? 0
+                      : -40
+                    : index == 14
+                    ? is14
+                      ? 0
+                      : -40
+                    : index == 15
+                    ? is15
+                      ? 0
+                      : -40
+                    : index == 16
+                    ? is16
+                      ? 0
+                      : -40
+                    : index == 17
+                    ? is17
+                      ? 0
+                      : -40
+                    : index == 18
+                    ? is18
+                      ? 0
+                      : -40
+                    : index == 19
+                    ? is19
+                      ? 0
+                      : -40
+                    : is20
+                    ? 0
+                    : -40,
+              }}
+              transition={{ type: "spring", delay: 0.2, duration: 1 }}
+              className=" mb-4 break-inside-avoid border-2 rounded-lg border-white"
+            >
+              <img
+                src={image.src}
+                alt={`Imassge ${index + 1}`}
+                className="transform transition duration-500 sm:hover:scale-105  w-full object-cover border-2  border-white bject-cover rounded-lg"
+              />
+            </motion.div>
+          );
+        })}
       </div>
 
       <div className="columns-4 sm:columns-5 lg:columns-5 py-10 md: py:py-20 gap-4 px-4  flex justify-around ">
@@ -859,19 +1040,14 @@ const IamgeLife = () => {
           (image, index) => (
             <motion.div
               key={index}
-              ref={
-                index === 0 ? refImage1 : index === 1 ? refImage2 : refImage3
-              }
-              animate={{
-                y: index % 2 === 0 ? (isInView2 ? 0 : -40) : isInView2 ? 0 : 40,
-              }}
+              ref={refvideo}
               transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className=" mb-4 break-inside-avoid rounded-lg "
             >
               <video
                 className=" h-auto sm:h-[300px]  border-2   shadow-xl rounded-lg"
                 controls
-                autoPlay
+                autoPlay={isVideo ? true : false}
                 loop
                 muted
               >
