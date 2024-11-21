@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/duyf12-wedding/static/css/main.29f2789f.css",
-    "main.js": "/duyf12-wedding/static/js/main.f8e316f5.js",
+    "main.css": "/duyf12-wedding/static/css/main.2418614e.css",
+    "main.js": "/duyf12-wedding/static/js/main.55d0d061.js",
     "static/js/453.a1bbb3f1.chunk.js": "/duyf12-wedding/static/js/453.a1bbb3f1.chunk.js",
+    "static/media/mp4": "/duyf12-wedding/static/media/5339630437990195194.6699d661435d8a96bca1.mp4",
     "static/media/hoa2.png": "/duyf12-wedding/static/media/hoa2.68ecd285668a215b66c1.png",
     "static/media/mo8.jpg": "/duyf12-wedding/static/media/mo8.3ea0842e1b49072f36ea.jpg",
+    "static/media/cuoi22.jpg": "/duyf12-wedding/static/media/cuoi22.d518049444bce0e9b658.jpg",
     "static/media/mo11.jpg": "/duyf12-wedding/static/media/mo11.6b2804c27eb371785684.jpg",
     "static/media/mo3.jpg": "/duyf12-wedding/static/media/mo3.0015514a6f288925499c.jpg",
     "static/media/mo16.jpg": "/duyf12-wedding/static/media/mo16.aaab5fb4acf35e41f01c.jpg",
     "static/media/mo4.jpg": "/duyf12-wedding/static/media/mo4.06b2b4e65bc089151f5e.jpg",
     "static/media/mo18.jpg": "/duyf12-wedding/static/media/mo18.ca9c61d166e9ddcaa18b.jpg",
     "static/media/mo12.jpg": "/duyf12-wedding/static/media/mo12.cecba817089147c25941.jpg",
+    "static/media/mo19.jpg": "/duyf12-wedding/static/media/mo19.d1eaaeec84c69a625588.jpg",
     "static/media/groom.jpg": "/duyf12-wedding/static/media/groom.62c84b2d9d8699ffc2cf.jpg",
     "static/media/cuoi6.jpg": "/duyf12-wedding/static/media/cuoi6.c8cc6428e13abbdfc316.jpg",
     "static/media/cuoi5.jpg": "/duyf12-wedding/static/media/cuoi5.216073c2da20658577e8.jpg",
@@ -38,20 +41,22 @@
     "static/media/thuy.png": "/duyf12-wedding/static/media/thuy.da918b3539dfc0b10a4e.png",
     "static/media/mo6.jpg": "/duyf12-wedding/static/media/mo6.7bdfe7c2ed4eeabd4a2f.jpg",
     "static/media/mo14.jpg": "/duyf12-wedding/static/media/mo14.ffe6c39ed40a9d5df9ca.jpg",
+    "static/media/mo21.jpg": "/duyf12-wedding/static/media/mo21.f84ff6af7cd824ab6ea6.jpg",
     "static/media/mo10.jpg": "/duyf12-wedding/static/media/mo10.7defdfb14e9f2a4401ec.jpg",
     "static/media/mo13.jpg": "/duyf12-wedding/static/media/mo13.008e43a8267b0a3afc74.jpg",
     "static/media/qrgroom.png": "/duyf12-wedding/static/media/qrgroom.a9e5f4782f6be5d7d126.png",
+    "static/media/mo20.jpg": "/duyf12-wedding/static/media/mo20.c010dfce7e521b136281.jpg",
     "static/media/qrbride.png": "/duyf12-wedding/static/media/qrbride.a859b451a0148c324e04.png",
     "static/media/sub_title.png": "/duyf12-wedding/static/media/sub_title.b58aa54f19230b8a331d.png",
     "static/media/icon.png": "/duyf12-wedding/static/media/icon.ce5f452e8bb0accae839.png",
     "static/media/logo.svg": "/duyf12-wedding/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/duyf12-wedding/index.html",
-    "main.29f2789f.css.map": "/duyf12-wedding/static/css/main.29f2789f.css.map",
-    "main.f8e316f5.js.map": "/duyf12-wedding/static/js/main.f8e316f5.js.map",
+    "main.2418614e.css.map": "/duyf12-wedding/static/css/main.2418614e.css.map",
+    "main.55d0d061.js.map": "/duyf12-wedding/static/js/main.55d0d061.js.map",
     "453.a1bbb3f1.chunk.js.map": "/duyf12-wedding/static/js/453.a1bbb3f1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.29f2789f.css",
-    "static/js/main.f8e316f5.js"
+    "static/css/main.2418614e.css",
+    "static/js/main.55d0d061.js"
   ]
 }
