@@ -1062,11 +1062,11 @@ const IamgeLife = () => {
         ].map((image, index) => {
           // 7 13 17
           return (
-            <motion.div
+            <div
               key={index}
-              initial={{ y: 0 }}
-              animate={{ y: 40 }}
-              transition={{ type: "spring", delay: 0.2, duration: 1 }}
+              // initial={{ y: 0 }}
+              // animate={{ y: 40 }}
+              // transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className=" mb-4 break-inside-avoid border-2 rounded-lg border-white"
             >
               <img
@@ -1074,7 +1074,7 @@ const IamgeLife = () => {
                 alt={`Imassge ${index + 1}`}
                 className="transform transition duration-500 sm:hover:scale-105  w-full object-cover border-2  border-white bject-cover rounded-lg"
               />
-            </motion.div>
+            </div>
           );
         })}
       </div>
