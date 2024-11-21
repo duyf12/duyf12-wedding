@@ -25,6 +25,8 @@ module.exports = {
       fontFamily: {
         sans: ["Bellota Text", "Arial", "sans-serif"], // Thêm font chữ tùy chỉnh
         script: ["Great Vibes", "cursive"],
+        thuy: ["Dancing Script", "cursive"], // Font chính: Dancing Script
+        duy: ["Parisienne", "cursive"],
       },
     },
   },
