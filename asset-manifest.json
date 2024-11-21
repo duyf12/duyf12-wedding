@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/duyf12-wedding/static/css/main.a10c11f7.css",
-    "main.js": "/duyf12-wedding/static/js/main.113764bc.js",
+    "main.js": "/duyf12-wedding/static/js/main.b164a6cf.js",
     "static/js/453.a1bbb3f1.chunk.js": "/duyf12-wedding/static/js/453.a1bbb3f1.chunk.js",
     "static/media/mp4": "/duyf12-wedding/static/media/5339630437990195194.6699d661435d8a96bca1.mp4",
     "static/media/hoa2.png": "/duyf12-wedding/static/media/hoa2.68ecd285668a215b66c1.png",
@@ -52,11 +52,11 @@
     "static/media/logo.svg": "/duyf12-wedding/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/duyf12-wedding/index.html",
     "main.a10c11f7.css.map": "/duyf12-wedding/static/css/main.a10c11f7.css.map",
-    "main.113764bc.js.map": "/duyf12-wedding/static/js/main.113764bc.js.map",
+    "main.b164a6cf.js.map": "/duyf12-wedding/static/js/main.b164a6cf.js.map",
     "453.a1bbb3f1.chunk.js.map": "/duyf12-wedding/static/js/453.a1bbb3f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a10c11f7.css",
-    "static/js/main.113764bc.js"
+    "static/js/main.b164a6cf.js"
   ]
 }
