@@ -861,7 +861,7 @@ const IamgeLife = () => {
       </div>
 
       {/* Grid hình ảnh */}
-      <div className="columns-4 sm:columns-5 lg:columns-5 py-10 md: py:py-20 gap-4 px-4">
+      <div className="  hidden sm:block columns-4 sm:columns-5 lg:columns-5 py-10 md: py:py-20 gap-4 px-4">
         {[
           { src: mo1 },
           { src: mo2 },
@@ -1035,13 +1035,56 @@ const IamgeLife = () => {
         })}
       </div>
 
+      <div className=" block sm:hidden columns-4  py-10 md: py:py-20 gap-4 px-4">
+        {[
+          { src: mo1 },
+          { src: mo2 },
+          { src: mo3 },
+          { src: mo4 },
+          { src: mo5 },
+          { src: mo6 },
+          { src: mo7 },
+          { src: mo8 },
+          { src: mo9 },
+          { src: mo10 },
+          { src: mo11 },
+          { src: mo12 },
+          { src: mo13 },
+          { src: mo14 },
+          { src: mo20 },
+          { src: mo15 },
+          { src: mo16 },
+          { src: mo17 },
+          { src: mo18 },
+          { src: mo19 },
+          { src: mo21 },
+          { src: cuoi5 },
+        ].map((image, index) => {
+          // 7 13 17
+          return (
+            <motion.div
+              key={index}
+              initial={{ y: 0 }}
+              animate={{ y: 40 }}
+              transition={{ type: "spring", delay: 0.2, duration: 1 }}
+              className=" mb-4 break-inside-avoid border-2 rounded-lg border-white"
+            >
+              <img
+                src={image.src}
+                alt={`Imassge ${index + 1}`}
+                className="transform transition duration-500 sm:hover:scale-105  w-full object-cover border-2  border-white bject-cover rounded-lg"
+              />
+            </motion.div>
+          );
+        })}
+      </div>
+
       <div className="columns-4 sm:columns-5 lg:columns-5 py-10 md: py:py-20 gap-4 px-4  flex justify-around ">
         {[{ src: video1 }, { src: video2 }, { src: video3 }].map(
           (image, index) => (
             <motion.div
               key={index}
               ref={refvideo}
-              transition={{ type: "spring", delay: 0.2, duration: 1 }}
               className=" mb-4 break-inside-avoid rounded-lg "
             >
               <video
