@@ -33,6 +33,7 @@ import qrbride from "./images/qrbride.png";
 import qrgroom from "./images/qrgroom.png";
 
 import thuy from "./images/thuy.png";
+import mp3 from "./images/moment/mp3.mp3";
 
 import mo1 from "./images/moment/mo1.jpg";
 import mo2 from "./images/moment/mo2.jpg";
@@ -86,8 +87,11 @@ function App() {
     }
   };
   return (
-    <div className="bg-[#f6f1f3]">
+    <div className="bg-[#f6f1f3] ">
       <Home />
+      <div className=" ">
+        <MusicPlayer />
+      </div>
 
       {/* <Video /> */}
       <Iamge />
@@ -113,6 +117,29 @@ function App() {
     </div>
   );
 }
+
+const MusicPlayer = () => {
+  const audioRef = useRef(null);
+
+  const playMusic = () => {
+    audioRef.current.play();
+  };
+
+  const pauseMusic = () => {
+    audioRef.current.pause();
+  };
+
+  useEffect(() => {
+    // Phát nhạc tự động khi ứng dụng tải
+    audioRef.current.play();
+  }, []);
+
+  return (
+    <div className="  ">
+      <audio ref={audioRef} src={mp3} loop />
+    </div>
+  );
+};
 
 const Home = () => {
   const refImage = useRef(null);
